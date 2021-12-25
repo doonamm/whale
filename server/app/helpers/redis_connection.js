@@ -1,8 +1,9 @@
+require('dotenv').config();
 const redis = require('redis');
 
 const redisClient = redis.createClient({
-    port: 6379,
-    host: '127.0.0.1'
+    url: process.env.REDIS_URL,
+    auth_pass: process.env.REDIS_PASSWORD,
 });
 
 redisClient.ping((err, pong)=>{

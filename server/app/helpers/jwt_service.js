@@ -2,6 +2,20 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const redisClient = require('../helpers/redis_connection');
 
+const allData = ()=>{
+    console.log('Redis-- Current data:');
+    redisClient.keys('*', (err, keys)=>{
+        if(err){
+            reject(err);
+        }
+        keys.forEach((key, index) => {
+            redisClient.get(key, (err, value)=>{
+                console.log(index + 1, '---', key, '---', value);
+            });
+        });
+    });
+};
+
 const signAccessToken = (userId)=>{
     return new Promise((resolve, reject)=>{
         const payload = {userId};
@@ -33,6 +47,7 @@ const signRefreshToken = (userId)=>{
                 if(err){
                     reject(err);
                 }
+                allData();
                 resolve(token);
             });
         });
@@ -92,6 +107,7 @@ const removeRefreshToken = (userId)=>{
         if(err){
             throw err;
         }
+        allData();
     });
 }
 

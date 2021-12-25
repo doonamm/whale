@@ -18,6 +18,7 @@ function Navbar(props){
                 }
             };
             const res = (await axios.post('/signout', {}, config)).data;
+            console.log(res);
             if(!res.success){
                 throw res;
             }
@@ -29,7 +30,6 @@ function Navbar(props){
         }
         finally{
             props.offline();
-            window.location.href = 'http://localhost:3000/';
         }
     }
 
