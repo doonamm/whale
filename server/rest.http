@@ -1,0 +1,28 @@
+GET http://localhost:3001
+
+###
+POST http://localhost:3001/signup
+Content-Type: application/json
+
+{
+    "username": "kiennam2",
+    "password": "cucarot"
+}
+
+###
+POST http://localhost:3001/signin
+Content-Type: application/json
+
+{
+    "username": "kiennam",
+    "password": "cucarot"
+}
+
+###
+POST http://localhost:3001/signout
+X-Refresh-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWJmMzA3NGM5OTg5ZWUzNzIwMDllMjkiLCJpYXQiOjE2Mzk5MTk3NDEsImV4cCI6MTY0MDAwNjE0MX0.fESPU5AMvPJpdNiIxQjqwnPytk5hJECBGXV0JR7pPmQ
+
+###
+GET http://localhost:3001/test 
+X-Access-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWI4YjFkMGViNDgyMTEwYWJhOWI5NTQiLCJpYXQiOjE2Mzk1NDY5ODQsImV4cCI6MTYzOTU0NzA0NH0.44j3UB-X1YW_pnQN3LZldH71Nk1VT77Kg-xbbkvimG8
+

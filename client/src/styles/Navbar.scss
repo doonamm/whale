@@ -1,0 +1,38 @@
+.nav{
+    background-color: var(--nav-color2);
+    background: linear-gradient(to right,rgba(0, 0, 255, 0) 82%, var(--nav-color3));
+    padding: 15px 20px;
+    color: rgba(255, 255, 255, .8);
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items:flex-start;
+        .sign-container{
+            .btn{
+                font-size: 0.9em;
+                letter-spacing: 0.5px;
+                margin-left: 25px;
+                text-transform: capitalize;
+                display: inline-block;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .logo-container{
+            position: relative;
+            height: 100%;
+            img{
+                filter: opacity(0.6) drop-shadow(0px 0px 8px rgba(255, 255, 255, .3));
+                width: 50px;
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                display: none;
+            }
+        }
+    }    
+}
