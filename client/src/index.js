@@ -10,7 +10,7 @@ import thunk from 'redux-thunk';
 
 const store = createStore(allReducers, applyMiddleware(thunk));
 ReactDOM.render( 
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
         <Provider store={store}>
             <App / >
         </Provider>
